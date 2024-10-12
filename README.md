@@ -1,11 +1,12 @@
 
 # Text to Speech
 
-A simple Python project that converts text into speech using the **gTTS** (Google Text-to-Speech) module and plays the audio using the **os** module. The speech is saved as a `.wav` file.
+A simple Python project that converts text from a file into speech using the **gTTS** (Google Text-to-Speech) module and plays the audio using the **os** module. The speech is saved as a `.wav` file.
 
 ## Features
 
-- Converts input text to speech.
+- Reads input text from a file (`1.txt`).
+- Converts the text to speech.
 - Saves the speech as a `.wav` file.
 - Automatically plays the `.wav` file.
 
@@ -23,47 +24,45 @@ A simple Python project that converts text into speech using the **gTTS** (Googl
     cd text-to-speech
     ```
 
-3. Install the required modules:
+3. Install the required module:
 
     ```bash
     pip install gtts
-    pip install pydub
     ```
+
+4. **Additional requirements:**
+   - For audio playback, you may need to adjust the `os.system` command based on your operating system.
 
 ## Usage
 
-1. Create a Python file and import the required modules:
+1. Create a file named `1.txt` and add the text you want to convert to speech.
+
+2. Use the following Python code:
 
     ```python
     from gtts import gTTS
     import os
-    from pydub import AudioSegment
+
+    # Open the text file and read the contents
+    f = open('1.txt')
+    x = f.read()
+
+    # Set the language
+    language = 'en'
+
+    # Convert text to speech
+    audio = gTTS(text=x, lang=language, slow=False)
+
+    # Save the speech as a .wav file
+    audio.save("1.wav")
+
+    # Play the .wav file
+    os.system("1.wav")  # For Windows users, adjust for other OS if necessary
     ```
 
-2. Define the text you want to convert:
+3. Run the script, and it will convert the text in `1.txt` to speech, save it as `1.wav`, and play the audio file.
 
-    ```python
-    text = "Hello, welcome to the text-to-speech project!"
-    ```
+## Requirements
 
-3. Convert text to speech:
-
-    ```python
-    speech = gTTS(text=text, lang='en', slow=False)
-    ```
-
-4. Save the speech as an mp3 file, convert it to `.wav`, and play the audio:
-
-    ```python
-    speech.save("output.mp3")
-    
-    # Convert mp3 to wav
-    sound = AudioSegment.from_mp3("output.mp3")
-    sound.export("output.wav", format="wav")
-    
-    # Play the wav file
-    os.system("start output.wav")  # For Windows users
-    ```
-
-> **Note:** Replace `start` with `open` for macOS, or `xdg-open` for Linux users.
-
+- Python 3.x
+- `gTTS` for text-to-speech conversion.
