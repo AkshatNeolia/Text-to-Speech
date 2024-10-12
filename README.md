@@ -30,9 +30,6 @@ A simple Python project that converts text into speech using the **gTTS** (Googl
     pip install pydub
     ```
 
-4. **Additional requirements:**
-   - For audio conversion, you need to have [FFmpeg](https://ffmpeg.org/download.html) installed. You can install it using your system's package manager or from the website.
-
 ## Usage
 
 1. Create a Python file and import the required modules:
