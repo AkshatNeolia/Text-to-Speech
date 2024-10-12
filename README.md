@@ -70,13 +70,3 @@ A simple Python project that converts text into speech using the **gTTS** (Googl
 
 > **Note:** Replace `start` with `open` for macOS, or `xdg-open` for Linux users.
 
-## Requirements
-
-- Python 3.x
-- `gTTS` for text-to-speech conversion.
-- `pydub` for audio format conversion.
-- FFmpeg for handling audio file conversions.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
