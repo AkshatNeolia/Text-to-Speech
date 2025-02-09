@@ -15,7 +15,7 @@ A simple Python project that converts text from a file into speech using the **g
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/text-to-speech.git
+    git clone https://github.com/AkshatNeolia/text-to-speech.git
     ```
 
 2. Navigate to the project directory:
